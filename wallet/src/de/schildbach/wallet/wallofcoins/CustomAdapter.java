@@ -22,7 +22,7 @@ public class CustomAdapter extends ArrayAdapter<CountryData.CountriesBean> {
 
     private Activity activity;
     private List<CountryData.CountriesBean> data;
-    LayoutInflater inflater;
+    private LayoutInflater inflater;
 
     public CustomAdapter(
             Activity activitySpinner,
@@ -73,27 +73,11 @@ public class CustomAdapter extends ArrayAdapter<CountryData.CountriesBean> {
 
         int left = (bean.left * width) / 288;
         int top = (bean.top * height) / 266;
-        int right = ((bean.left + 20) * width) / 288;
-        int bottom = ((bean.top + 11) * height) / 266;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ivCountry.drawableHotspotChanged(left, top);
         }
-
-//        ivCountry.setImageDrawable();
-
-//        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ivCountry.getLayoutParams();
-//        layoutParams.leftMargin = convertDpToPixel(bean.left);
-//        layoutParams.topMargin = convertDpToPixel(bean.top);
-//        ivCountry.setLayoutParams(layoutParams);
-//        ivCountry.requestLayout();
-
         return row;
     }
 
-    int convertDpToPixel(float dp) {
-        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-        float px = dp * (metrics.densityDpi / 160f);
-        return Math.round(px);
-    }
 }

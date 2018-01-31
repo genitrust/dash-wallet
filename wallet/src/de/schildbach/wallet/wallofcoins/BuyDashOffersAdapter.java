@@ -69,7 +69,6 @@ public class BuyDashOffersAdapter extends RecyclerView.Adapter<RecyclerView.View
             vholder.binding.setItem(bean);
 
             if (getNumAmount(bean.deposit.amount) >= 200) {
-//            android:text="@{@string/dotUnicode(item.amount.dots,GenericUtils.currencySymbol(item.deposit.currency),item.deposit.amount)}"
                 vholder.binding.tvItrmOffer2.setText(context.getString(R.string.dotUnicode, bean.amount.dots, GenericUtils.currencySymbol(bean.deposit.currency), getNumAmount(bean.deposit.amount) / getNumAmount(bean.amount.DASH)));
             } else {
                 vholder.binding.tvItrmOffer2.setText(context.getString(R.string.dotUnicodeNoRate, bean.amount.dots));
@@ -124,7 +123,6 @@ public class BuyDashOffersAdapter extends RecyclerView.Adapter<RecyclerView.View
             vholder.binding.setItem(bean);
 
             if (getNumAmount(bean.deposit.amount) >= 200) {
-//            android:text="@{@string/dotUnicode(item.amount.dots,GenericUtils.currencySymbol(item.deposit.currency),item.deposit.amount)}"
                 vholder.binding.tvItrmOffer2.setText(context.getString(R.string.dotUnicode, bean.amount.dots, GenericUtils.currencySymbol(bean.deposit.currency), getNumAmount(bean.deposit.amount) / getNumAmount(bean.amount.DASH)));
             } else {
                 vholder.binding.tvItrmOffer2.setText(context.getString(R.string.dotUnicodeNoRate, bean.amount.dots));

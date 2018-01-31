@@ -13,7 +13,6 @@ public final class BuyDashActivity extends AbstractWalletActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.buy_dash_content);
     }
 
@@ -24,7 +23,6 @@ public final class BuyDashActivity extends AbstractWalletActivity {
                 onBackPressed();
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

@@ -35,7 +35,6 @@ public class WallofCoins {
     // TODO need to change url for production
     private static String API_BASE_URL;
     private static Context context;
-//    private static final String API_BASE_URL = "https://wallofcoins.com/";
 
     static final TrustManager[] trustAllCerts = new TrustManager[]{
             new X509TrustManager() {
@@ -72,18 +71,14 @@ public class WallofCoins {
     private static Retrofit getClient(Interceptor interceptor) {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-
         // add your other interceptors …
         httpClient.connectTimeout(60, TimeUnit.SECONDS);
         httpClient.readTimeout(60, TimeUnit.SECONDS);
-
-
         try {
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
             keyStore.load(null, null);
 
             SSLContext sslContext = SSLContext.getInstance("TLS");
-
             TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init(keyStore);
             KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());

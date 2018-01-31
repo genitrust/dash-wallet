@@ -66,8 +66,25 @@
                             android:textStyle="bold"
                             android:visibility='@{TextUtils.isEmpty(item.bankName)?View.GONE:View.VISIBLE}'
                             tools:text="Bank Name" />
-
-
+                        <TextView
+                            android:id="@+id/tv_itrm_offer_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="Subject to local availability"
+                            android:textSize="12dp"
+                            tools:text="TextView" />
+                        <TextView
+                            android:id="@+id/button_buy_dash_item_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:autoLink="web"
+                            android:text="Check Location"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"/>
                         <TextView
                             android:id="@+id/text_phone"
                             android:layout_width="match_parent"

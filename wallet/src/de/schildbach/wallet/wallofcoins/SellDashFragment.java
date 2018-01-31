@@ -118,10 +118,6 @@ public final class SellDashFragment extends Fragment implements OnSharedPreferen
     @Nullable
     private BlockchainState blockchainState = null;
 
-    //    binding.sellDashProgress binding.sellDashProgress;
-//    View layoutCreateAuth;
-//    EditText email, phone, pass;
-//    Button createAuth;
     private final LoaderManager.LoaderCallbacks<BlockchainState> blockchainStateLoaderCallbacks = new LoaderManager.LoaderCallbacks<BlockchainState>() {
         @Override
         public Loader<BlockchainState> onCreateLoader(final int id, final Bundle args) {
@@ -372,7 +368,7 @@ public final class SellDashFragment extends Fragment implements OnSharedPreferen
                 }
             });
         } else {
-            Toast.makeText(activity, "Enter phone number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, R.string.alert_phone, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -640,7 +636,6 @@ public final class SellDashFragment extends Fragment implements OnSharedPreferen
         WallofCoins.createService(getActivity()).createAuth(createAuthReq).enqueue(new Callback<CreateAuthResp>() {
             @Override
             public void onResponse(Call<CreateAuthResp> call, Response<CreateAuthResp> response) {
-
 
                 try {
                     if (response.code() >= 400) {

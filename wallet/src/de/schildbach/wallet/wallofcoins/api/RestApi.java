@@ -33,7 +33,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-
+/**
+ * RestApi Client Interface For all WOC RestFull API with Method
+ * Get,Post,Update & Delete API call
+ */
 public interface RestApi {
 
     @GET("api/v1/auth/current/")
@@ -67,7 +70,6 @@ public interface RestApi {
     @GET("api/v1/ad")
     Call<List<AdsListActivityResp>> getAdsListing();
 
-
     @GET("api/v1/markets/{crypto}/{currency}/")
     Call<List<GetPricingOptionsResp>> getPricingOptions(@Path("crypto") String crypto, @Path("currency") String currency);
 
@@ -85,7 +87,6 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("api/verifyAd/")
     Call<VerifyAdResp> verifyAd(@FieldMap Map<String, String> partMap);
-
 
     @FormUrlEncoded
     @POST("api/v1/discoveryInputs/")
@@ -111,4 +112,3 @@ public interface RestApi {
     Call<CreateDeviceResp> createDevice(@FieldMap Map<String, String> partMap);
 
 }
-
