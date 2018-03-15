@@ -57,7 +57,7 @@ import de.schildbach.wallet.util.Io;
 import de.schildbach.wallet.util.KeyboardUtil;
 import de.schildbach.wallet.util.Nfc;
 import de.schildbach.wallet.util.WalletUtils;
-import de.schildbach.wallet.wallofcoins.buydash.BuyDashActivity;
+import com.wallofcoins.dash.wallet.BuyDashActivity;
 import de.schildbach.wallet_test.R;
 
 import android.Manifest;

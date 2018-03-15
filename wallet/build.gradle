@@ -57,6 +57,8 @@ dependencies {
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    compile project(path: ':wall-of-coins-lib')
+    compile project(path: ':common')
 }
 
 ext {

@@ -50,7 +50,6 @@ import de.schildbach.wallet.util.CrashReporter;
 import de.schildbach.wallet.util.Qr;
 import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
 import de.schildbach.wallet.util.WalletUtils;
-import de.schildbach.wallet.wallofcoins.buydash.BuyDashActivity;
 import de.schildbach.wallet_test.R;
 
 import android.app.Activity;
@@ -93,6 +92,8 @@ import android.widget.PopupMenu;
 import android.widget.PopupMenu.OnMenuItemClickListener;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
+
+import com.wallofcoins.dash.wallet.BuyDashActivity;
 
 /**
  * @author Andreas Schildbach

@@ -1,0 +1,490 @@
+To honour the JVM settings for this build a new JVM will be forked. Please consider using the daemon: https://docs.gradle.org/2.10/userguide/gradle_daemon.html.
+Incremental java compilation is an incubating feature.
+:common:dependencies
+
+------------------------------------------------------------
+Project :common
+------------------------------------------------------------
+
+_debugAndroidTestApk - ## Internal use, do not manually configure ##
++--- com.android.support.test.espresso:espresso-core:3.0.1
+|    +--- com.android.support.test:runner:1.0.1
+|    |    +--- junit:junit:4.12
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    \--- net.sf.kxml:kxml2:2.3.0
+|    +--- com.android.support.test:rules:1.0.1
+|    |    \--- com.android.support.test:runner:1.0.1 (*)
+|    +--- com.android.support.test.espresso:espresso-idling-resource:3.0.1
+|    +--- com.squareup:javawriter:2.1.1
+|    +--- javax.inject:javax.inject:1
+|    +--- org.hamcrest:hamcrest-library:1.3
+|    |    \--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.hamcrest:hamcrest-integration:1.3
+|    |    \--- org.hamcrest:hamcrest-library:1.3 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.1
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+_debugAndroidTestCompile - ## Internal use, do not manually configure ##
++--- com.android.support.test.espresso:espresso-core:3.0.1
+|    +--- com.android.support.test:runner:1.0.1
+|    |    +--- junit:junit:4.12
+|    |    |    \--- org.hamcrest:hamcrest-core:1.3
+|    |    \--- net.sf.kxml:kxml2:2.3.0
+|    +--- com.android.support.test:rules:1.0.1
+|    |    \--- com.android.support.test:runner:1.0.1 (*)
+|    +--- com.android.support.test.espresso:espresso-idling-resource:3.0.1
+|    +--- com.squareup:javawriter:2.1.1
+|    +--- javax.inject:javax.inject:1
+|    +--- org.hamcrest:hamcrest-library:1.3
+|    |    \--- org.hamcrest:hamcrest-core:1.3
+|    +--- org.hamcrest:hamcrest-integration:1.3
+|    |    \--- org.hamcrest:hamcrest-library:1.3 (*)
+|    \--- com.google.code.findbugs:jsr305:2.0.1
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+_debugCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+_debugPublish - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+_debugUnitTestApk - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
++--- project :wallet
+\--- junit:junit:4.12
+     \--- org.hamcrest:hamcrest-core:1.3
+
+_debugUnitTestCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
++--- project :wallet
+\--- junit:junit:4.12
+     \--- org.hamcrest:hamcrest-core:1.3
+
+_releaseCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+_releasePublish - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+_releaseUnitTestApk - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
++--- project :wallet
+\--- junit:junit:4.12
+     \--- org.hamcrest:hamcrest-core:1.3
+
+_releaseUnitTestCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
++--- project :wallet
+\--- junit:junit:4.12
+     \--- org.hamcrest:hamcrest-core:1.3
+
+androidJacocoAgent - The Jacoco agent to use to get coverage data.
+\--- org.jacoco:org.jacoco.agent:0.7.4.201502262128
+
+androidJacocoAnt - The Jacoco ant tasks to use to get execute Gradle tasks.
+\--- org.jacoco:org.jacoco.ant:0.7.4.201502262128
+     +--- org.jacoco:org.jacoco.core:0.7.4.201502262128
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     +--- org.jacoco:org.jacoco.report:0.7.4.201502262128
+     |    +--- org.jacoco:org.jacoco.core:0.7.4.201502262128 (*)
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     \--- org.jacoco:org.jacoco.agent:0.7.4.201502262128
+
+androidTestCompile - Classpath for compiling the androidTest sources.
+\--- com.android.support.test.espresso:espresso-core:3.0.1
+     +--- com.android.support.test:runner:1.0.1
+     |    +--- junit:junit:4.12
+     |    |    \--- org.hamcrest:hamcrest-core:1.3
+     |    \--- net.sf.kxml:kxml2:2.3.0
+     +--- com.android.support.test:rules:1.0.1
+     |    \--- com.android.support.test:runner:1.0.1 (*)
+     +--- com.android.support.test.espresso:espresso-idling-resource:3.0.1
+     +--- com.squareup:javawriter:2.1.1
+     +--- javax.inject:javax.inject:1
+     +--- org.hamcrest:hamcrest-library:1.3
+     |    \--- org.hamcrest:hamcrest-core:1.3
+     +--- org.hamcrest:hamcrest-integration:1.3
+     |    \--- org.hamcrest:hamcrest-library:1.3 (*)
+     \--- com.google.code.findbugs:jsr305:2.0.1
+
+androidTestProvided - Classpath for only compiling the androidTest sources.
+No dependencies
+
+androidTestPublish - Classpath only used when publishing 'androidTest'.
+No dependencies
+
+androidTestWearApp - Link to a wear app to embed for object 'androidTest'.
+No dependencies
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+compile - Classpath for compiling the main sources.
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+debugCompile - Classpath for compiling the debug sources.
+No dependencies
+
+debugProvided - Classpath for only compiling the debug sources.
+No dependencies
+
+debugPublish - Classpath only used when publishing 'debug'.
+No dependencies
+
+debugWearApp - Link to a wear app to embed for object 'debug'.
+No dependencies
+
+default - Configuration for default artifacts.
++--- com.android.support:appcompat-v7:25.1.1
+|    +--- com.android.support:support-annotations:25.1.1
+|    +--- com.android.support:support-v4:25.1.1
+|    |    +--- com.android.support:support-compat:25.1.1
+|    |    |    \--- com.android.support:support-annotations:25.1.1
+|    |    +--- com.android.support:support-media-compat:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-utils:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    +--- com.android.support:support-core-ui:25.1.1
+|    |    |    +--- com.android.support:support-annotations:25.1.1
+|    |    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    |    \--- com.android.support:support-fragment:25.1.1
+|    |         +--- com.android.support:support-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-media-compat:25.1.1 (*)
+|    |         +--- com.android.support:support-core-ui:25.1.1 (*)
+|    |         \--- com.android.support:support-core-utils:25.1.1 (*)
+|    +--- com.android.support:support-vector-drawable:25.1.1
+|    |    +--- com.android.support:support-annotations:25.1.1
+|    |    \--- com.android.support:support-compat:25.1.1 (*)
+|    \--- com.android.support:animated-vector-drawable:25.1.1
+|         \--- com.android.support:support-vector-drawable:25.1.1 (*)
+\--- project :wallet
+
+default-mapping - Configuration for default mapping artifacts.
+No dependencies
+
+default-metadata - Metadata for the produced APKs.
+No dependencies
+
+provided - Classpath for only compiling the main sources.
+No dependencies
+
+publish - Classpath only used when publishing 'main'.
+No dependencies
+
+releaseCompile - Classpath for compiling the release sources.
+No dependencies
+
+releaseProvided - Classpath for only compiling the release sources.
+No dependencies
+
+releasePublish - Classpath only used when publishing 'release'.
+No dependencies
+
+releaseWearApp - Link to a wear app to embed for object 'release'.
+No dependencies
+
+testCompile - Classpath for compiling the test sources.
+\--- junit:junit:4.12
+     \--- org.hamcrest:hamcrest-core:1.3
+
+testDebugCompile - Classpath for compiling the testDebug sources.
+No dependencies
+
+testDebugProvided - Classpath for only compiling the testDebug sources.
+No dependencies
+
+testDebugPublish - Classpath only used when publishing 'testDebug'.
+No dependencies
+
+testDebugWearApp - Link to a wear app to embed for object 'testDebug'.
+No dependencies
+
+testProvided - Classpath for only compiling the test sources.
+No dependencies
+
+testPublish - Classpath only used when publishing 'test'.
+No dependencies
+
+testReleaseCompile - Classpath for compiling the testRelease sources.
+No dependencies
+
+testReleaseProvided - Classpath for only compiling the testRelease sources.
+No dependencies
+
+testReleasePublish - Classpath only used when publishing 'testRelease'.
+No dependencies
+
+testReleaseWearApp - Link to a wear app to embed for object 'testRelease'.
+No dependencies
+
+testWearApp - Link to a wear app to embed for object 'test'.
+No dependencies
+
+wearApp - Link to a wear app to embed for object 'main'.
+No dependencies
+
+BUILD SUCCESSFUL
+
+Total time: 14.692 secs

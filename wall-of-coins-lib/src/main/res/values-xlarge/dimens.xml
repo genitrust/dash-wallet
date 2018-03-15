@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="font_size_small">18sp</dimen>
+    <dimen name="font_size_normal">22sp</dimen>
+    <dimen name="font_size_large">30sp</dimen>
+	
+    <dimen name="list_entry_padding_horizontal_lax">25dp</dimen>
+    <dimen name="list_entry_padding_vertical_cram">6dp</dimen>
+    <dimen name="list_entry_padding_vertical">12dp</dimen>
+    <dimen name="list_entry_padding_vertical_lax">18dp</dimen>
+
+</resources>
