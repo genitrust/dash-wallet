@@ -1,7 +1,9 @@
 package com.wallofcoins.dash.wallet;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 public class BuyDashActivity extends AppCompatActivity {
@@ -10,6 +12,19 @@ public class BuyDashActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buy_dash_content);
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        Toolbar toolbarView = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbarView != null) {
+            setSupportActionBar(toolbarView);
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setDisplayHomeAsUpEnabled(true);
+                actionBar.setDisplayShowHomeEnabled(true);
+            }
+        }
     }
 
     @Override
