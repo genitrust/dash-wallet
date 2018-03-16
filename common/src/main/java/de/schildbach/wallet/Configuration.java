@@ -29,11 +29,11 @@ import com.google.common.base.Strings;
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.utils.Fiat;
 import org.bitcoinj.utils.MonetaryFormat;
+import org.dash.wallet.common.R;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import de.schildbach.wallet.data.ExchangeRate;
-import de.schildbach.wallet_test.R;
 
 /**
  * @author Andreas Schildbach
@@ -151,7 +151,7 @@ public class Configuration {
 
     public Uri getBlockExplorer() {
         return Uri.parse(prefs.getString(PREFS_KEY_BLOCK_EXPLORER,
-                res.getStringArray(Constants.TEST ? R.array.preferences_block_explorer_values_testnet : R.array.preferences_block_explorer_values)[0]));
+                res.getStringArray(ConstantsTmp.TEST ? R.array.preferences_block_explorer_values_testnet1 : R.array.preferences_block_explorer_values1)[0]));
     }
 
     public boolean remindBalance() {
@@ -243,7 +243,7 @@ public class Configuration {
             prefs.edit().putInt(PREFS_KEY_BEST_CHAIN_HEIGHT_EVER, bestChainHeightEver).apply();
     }
 
-    public ExchangeRate getCachedExchangeRate() {
+    public de.schildbach.wallet.data.ExchangeRate getCachedExchangeRate() {
         if (prefs.contains(PREFS_KEY_CACHED_EXCHANGE_CURRENCY) && prefs.contains(PREFS_KEY_CACHED_EXCHANGE_RATE_COIN)
                 && prefs.contains(PREFS_KEY_CACHED_EXCHANGE_RATE_FIAT)) {
             final String cachedExchangeCurrency = prefs.getString(PREFS_KEY_CACHED_EXCHANGE_CURRENCY, null);

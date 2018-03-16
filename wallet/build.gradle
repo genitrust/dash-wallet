@@ -51,6 +51,8 @@ dependencies {
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    compile project(path: ':wall-of-coins-lib')
+    compile project(path: ':common')
 }
 
 ext {
@@ -114,6 +116,11 @@ android {
             applicationId = "hashengineering.darkcoin.wallet_test"
         }
     }
+    dataBinding {
+        enabled = true
+    }
+    useLibrary 'org.apache.http.legacy'
+
     packagingOptions {
         exclude 'lib/x86_64/darwin/libscrypt.dylib'
         exclude 'lib/x86_64/freebsd/libscrypt.so'
