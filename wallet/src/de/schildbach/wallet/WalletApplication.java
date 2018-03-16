@@ -78,7 +78,7 @@ import static de.schildbach.wallet.Constants.HEX;
 /**
  * @author Andreas Schildbach
  */
-public class WalletApplication extends Application {
+public class WalletApplication extends Application implements ConfigurationProvider {
     private Configuration config;
     private ActivityManager activityManager;
 
@@ -100,6 +100,13 @@ public class WalletApplication extends Application {
     private static final Logger log = LoggerFactory.getLogger(WalletApplication.class);
 
     private RefWatcher refWatcher;
+
+    private IntermoduleBroadcastHandler intermoduleBroadcastHandler = new IntermoduleBroadcastHandler() {
+        @Override
+        protected Wallet getWallet() {
+            return wallet;
+        }
+    };
 
     public static RefWatcher getRefWatcher(Context context) {
         WalletApplication application = (WalletApplication) context.getApplicationContext();
@@ -174,6 +181,8 @@ public class WalletApplication extends Application {
         afterLoadWallet();
 
         cleanupFiles();
+
+        intermoduleBroadcastHandler.register(this);
     }
 
     private void afterLoadWallet() {
@@ -263,6 +272,7 @@ public class WalletApplication extends Application {
         }
     }
 
+    @Override
     public Configuration getConfiguration() {
         return config;
     }
