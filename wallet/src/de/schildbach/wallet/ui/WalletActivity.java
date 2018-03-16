@@ -1004,7 +1004,6 @@ public final class WalletActivity extends AbstractBindServiceActivity
             SweepWalletActivity.start(this);
         } else if (id == R.id.nav_network_monitor) {
             startActivity(new Intent(this, NetworkMonitorActivity.class));
-
         } else if (id == R.id.nav_buy_dash_with_cash) {
             startActivity(new Intent(this, BuyDashActivity.class));
         } else if (id == R.id.nav_safety) {

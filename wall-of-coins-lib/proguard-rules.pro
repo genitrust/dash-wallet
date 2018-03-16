@@ -19,3 +19,21 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn sun.misc.Unsafe
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
+-dontwarn javax.annotation.CheckReturnValue
+-dontwarn javax.annotation.CheckForNull
+-dontwarn javax.annotation.concurrent.GuardedBy
+-dontwarn javax.annotation.concurrent.Immutable
+-dontwarn javax.annotation.concurrent.ThreadSafe
+-dontwarn javax.annotation.concurrent.NotThreadSafe
+-dontwarn javax.annotation.**
+-dontwarn org.xmlpull.v1.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn com.google.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
+-dontwarn retrofit2.Platform$Java8

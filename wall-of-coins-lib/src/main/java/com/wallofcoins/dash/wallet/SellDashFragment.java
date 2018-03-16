@@ -74,7 +74,7 @@ import com.wallofcoins.dash.wallet.response.GetReceivingOptionsResp;
 import com.wallofcoins.dash.wallet.response.SendVerificationResp;
 import com.wallofcoins.dash.wallet.response.VerifyAdResp;
 
-import de.schildbach.wallet.Constants1;
+import de.schildbach.wallet.ConstantsTmp;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import retrofit2.Call;
@@ -368,7 +368,7 @@ public final class SellDashFragment extends Fragment implements OnSharedPreferen
                             mNewValues.put(AddressBookProviderHelper.KEY_LABEL, receivingOptionsResp.name);
 
 
-                            final Address address = Address.fromBase58(Constants1.NETWORK_PARAMETERS, verifyAdResp.fundingAddress);
+                            final Address address = Address.fromBase58(ConstantsTmp.NETWORK_PARAMETERS, verifyAdResp.fundingAddress);
                             final Uri uri = AddressBookProviderHelper.contentUri(activity.getPackageName()).buildUpon().appendPath(address.toBase58()).build();
 
                             activity.getContentResolver().insert(
@@ -376,7 +376,7 @@ public final class SellDashFragment extends Fragment implements OnSharedPreferen
                                     mNewValues
                             );
 
-//                            SendCoinsActivity.start(activity, PaymentIntent.fromAddress(Address.fromBase58(Constants1.NETWORK_PARAMETERS, verifyAdResp.fundingAddress), receivingOptionsResp.name));
+//                            SendCoinsActivity.start(activity, PaymentIntent.fromAddress(Address.fromBase58(ConstantsTmp.NETWORK_PARAMETERS, verifyAdResp.fundingAddress), receivingOptionsResp.name));
 
                             activity.finish();
 

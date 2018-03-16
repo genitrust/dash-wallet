@@ -23,7 +23,7 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 
-import de.schildbach.wallet.Constants1;
+import de.schildbach.wallet.ConstantsTmp;
 
 /**
  * @author Andreas Schildbach
@@ -38,7 +38,7 @@ public final class CurrencySymbolDrawable extends Drawable {
         paint.setAntiAlias(true);
         paint.setTextSize(textSize);
 
-        this.symbol = symbol + Constants1.CHAR_HAIR_SPACE;
+        this.symbol = symbol + ConstantsTmp.CHAR_HAIR_SPACE;
         this.y = y;
     }
 

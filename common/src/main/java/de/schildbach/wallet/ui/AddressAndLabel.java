@@ -29,7 +29,7 @@ import org.bitcoinj.core.WrongNetworkException;
 
 import javax.annotation.Nullable;
 
-import de.schildbach.wallet.Constants1;
+import de.schildbach.wallet.ConstantsTmp;
 
 /**
  * @author Andreas Schildbach
@@ -87,7 +87,7 @@ public class AddressAndLabel implements Parcelable {
     };
 
     private AddressAndLabel(final Parcel in) {
-        address = Address.fromBase58(Constants1.NETWORK_PARAMETERS, in.readString());
+        address = Address.fromBase58(ConstantsTmp.NETWORK_PARAMETERS, in.readString());
         label = in.readString();
     }
 }

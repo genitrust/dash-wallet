@@ -151,7 +151,7 @@ public class Configuration {
 
     public Uri getBlockExplorer() {
         return Uri.parse(prefs.getString(PREFS_KEY_BLOCK_EXPLORER,
-                res.getStringArray(Constants1.TEST ? R.array.preferences_block_explorer_values_testnet1 : R.array.preferences_block_explorer_values1)[0]));
+                res.getStringArray(ConstantsTmp.TEST ? R.array.preferences_block_explorer_values_testnet1 : R.array.preferences_block_explorer_values1)[0]));
     }
 
     public boolean remindBalance() {

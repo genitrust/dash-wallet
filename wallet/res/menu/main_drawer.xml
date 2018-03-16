@@ -29,9 +29,6 @@
         android:icon="@drawable/ic_menu_address_book"
         android:title="@string/preferences_report_issue_title"
         />
-
-
-
     <!--</group>-->
 
     <item android:title="@string/navigation_configuration">

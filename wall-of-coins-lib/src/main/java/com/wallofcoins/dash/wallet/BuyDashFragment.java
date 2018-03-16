@@ -76,6 +76,8 @@ import com.wallofcoins.dash.wallet.response.GetHoldsResp;
 import com.wallofcoins.dash.wallet.response.GetOffersResp;
 import com.wallofcoins.dash.wallet.response.GetReceivingOptionsResp;
 import com.wallofcoins.dash.wallet.response.OrderListResp;
+import com.wallofcoins.dash.wallet.ui.CurrencyAmountView;
+import com.wallofcoins.dash.wallet.ui.CurrencyCalculatorLink;
 
 import org.bitcoinj.core.Address;
 import org.dash.wallet.common.ui.LocalBroadcastHelper;
@@ -94,11 +96,9 @@ import java.util.TimeZone;
 
 import de.schildbach.wallet.Configuration;
 import de.schildbach.wallet.ConfigurationProvider;
-import de.schildbach.wallet.Constants1;
+import de.schildbach.wallet.ConstantsTmp;
 import de.schildbach.wallet.data.ExchangeRate;
 import de.schildbach.wallet.ui.AddressAndLabel;
-import de.schildbach.wallet.ui.CurrencyAmountView;
-import de.schildbach.wallet.ui.CurrencyCalculatorLink;
 import de.schildbach.wallet.ui.ExchangeRateLoader;
 import de.schildbach.wallet.ui.ExchangeRatesProviderHelper;
 import okhttp3.Interceptor;
@@ -536,8 +536,8 @@ public final class BuyDashFragment extends Fragment implements OnSharedPreferenc
         binding.requestCoinsAmountBtc.setInputFormat(config.getMaxPrecisionFormat());
         binding.requestCoinsAmountBtc.setHintFormat(config.getFormat());
 
-        binding.requestCoinsAmountLocal.setInputFormat(Constants1.LOCAL_FORMAT);
-        binding.requestCoinsAmountLocal.setHintFormat(Constants1.LOCAL_FORMAT);
+        binding.requestCoinsAmountLocal.setInputFormat(ConstantsTmp.LOCAL_FORMAT);
+        binding.requestCoinsAmountLocal.setHintFormat(ConstantsTmp.LOCAL_FORMAT);
         amountCalculatorLink = new CurrencyCalculatorLink(binding.requestCoinsAmountBtc, binding.requestCoinsAmountLocal);
 
         binding.rvOffers.setLayoutManager(new LinearLayoutManager(activity));
