@@ -17,19 +17,19 @@
 
 package de.schildbach.wallet.ui;
 
-import javax.annotation.Nullable;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.google.common.base.Objects;
 
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.AddressFormatException;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.WrongNetworkException;
 
-import com.google.common.base.Objects;
+import javax.annotation.Nullable;
 
-import de.schildbach.wallet.Constants;
-
-import android.os.Parcel;
-import android.os.Parcelable;
+import de.schildbach.wallet.ConstantsTmp;
 
 /**
  * @author Andreas Schildbach
@@ -74,7 +74,7 @@ public class AddressAndLabel implements Parcelable {
         dest.writeString(label);
     }
 
-    public static final Parcelable.Creator<AddressAndLabel> CREATOR = new Parcelable.Creator<AddressAndLabel>() {
+    public static final Creator<AddressAndLabel> CREATOR = new Creator<AddressAndLabel>() {
         @Override
         public AddressAndLabel createFromParcel(final Parcel in) {
             return new AddressAndLabel(in);
@@ -87,7 +87,7 @@ public class AddressAndLabel implements Parcelable {
     };
 
     private AddressAndLabel(final Parcel in) {
-        address = Address.fromBase58(Constants.NETWORK_PARAMETERS, in.readString());
+        address = Address.fromBase58(ConstantsTmp.NETWORK_PARAMETERS, in.readString());
         label = in.readString();
     }
 }

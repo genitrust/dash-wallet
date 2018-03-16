@@ -87,10 +87,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.PopupMenu.OnMenuItemClickListener;
 import android.widget.TextView;
 import android.widget.ViewAnimator;
+
+import com.wallofcoins.dash.wallet.BuyDashActivity;
 
 /**
  * @author Andreas Schildbach
@@ -111,6 +114,7 @@ public class WalletTransactionsFragment extends Fragment implements LoaderCallba
 
     private ViewAnimator viewGroup;
     private TextView emptyView;
+    private Button btnBuyDash;
     private RecyclerView recyclerView;
     private TransactionsAdapter adapter;
     private MenuItem filterMenuItem;
@@ -174,7 +178,7 @@ public class WalletTransactionsFragment extends Fragment implements LoaderCallba
         viewGroup = (ViewAnimator) view.findViewById(R.id.wallet_transactions_group);
 
         emptyView = (TextView) view.findViewById(R.id.wallet_transactions_empty);
-
+        btnBuyDash = (Button) view.findViewById(R.id.buy_dash_with_cash);
         recyclerView = (RecyclerView) view.findViewById(R.id.wallet_transactions_list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -444,6 +448,13 @@ public class WalletTransactionsFragment extends Fragment implements LoaderCallba
             if (direction != Direction.SENT)
                 emptyText.append("\n\n").append(getString(R.string.wallet_transactions_fragment_empty_text_howto));
             emptyView.setText(emptyText);
+            btnBuyDash.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(activity, BuyDashActivity.class));
+                }
+            });
         } else {
             viewGroup.setDisplayedChild(2);
         }

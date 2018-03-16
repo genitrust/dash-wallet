@@ -17,12 +17,13 @@
 
 package de.schildbach.wallet.ui;
 
-import de.schildbach.wallet.Constants;
-
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
+
+import de.schildbach.wallet.ConstantsTmp;
 
 /**
  * @author Andreas Schildbach
@@ -37,7 +38,7 @@ public final class CurrencySymbolDrawable extends Drawable {
         paint.setAntiAlias(true);
         paint.setTextSize(textSize);
 
-        this.symbol = symbol + Constants.CHAR_HAIR_SPACE;
+        this.symbol = symbol + ConstantsTmp.CHAR_HAIR_SPACE;
         this.y = y;
     }
 
@@ -53,7 +54,7 @@ public final class CurrencySymbolDrawable extends Drawable {
 
     @Override
     public int getOpacity() {
-        return 0;
+        return PixelFormat.UNKNOWN;
     }
 
     @Override
