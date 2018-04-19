@@ -13,9 +13,9 @@ import android.widget.ProgressBar;
 
 import java.util.HashMap;
 
-import de.schildbach.wallet.wallofcoins.buyingwizard.BuyDashBaseActivity;
 import de.schildbach.wallet.wallofcoins.buyingwizard.BuyDashBaseFragment;
 import de.schildbach.wallet.wallofcoins.buyingwizard.utils.NetworkUtil;
+import de.schildbach.wallet.wallofcoins.selling_wizard.SellingBaseActivity;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingApiConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.instruction.InstructionFragment;
@@ -86,10 +86,12 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
 
         switch (view.getId()) {
             case R.id.btnResendOtp:
+                showToast("Under Implementation");
                 // verifyOTP();
                 break;
             case R.id.btnVerifyAdd:
-                verifyAd();
+                navigateToLocation();
+                //verifyAd();
                 break;
         }
     }
@@ -136,7 +138,7 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
      */
     private void navigateToLocation() {
         InstructionFragment instructionFragment = new InstructionFragment();
-        ((BuyDashBaseActivity) mContext).replaceFragment(instructionFragment, true, true);
+        ((SellingBaseActivity) mContext).replaceFragment(instructionFragment, true, true);
     }
 
 

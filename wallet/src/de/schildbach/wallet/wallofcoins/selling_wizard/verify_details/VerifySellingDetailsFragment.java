@@ -20,6 +20,7 @@ import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingApiConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.AddressVo;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.SendVerificationRespVo;
+import de.schildbach.wallet.wallofcoins.selling_wizard.storage.SharedPreferenceUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.SellingConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.WOCLogUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.verification_otp.VerifycationCodeFragment;
@@ -104,7 +105,8 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
 
         switch (view.getId()) {
             case R.id.btnContinue:
-                createAddress();
+                navigateToCodeScreen("52015");
+                // createAddress();
                 break;
         }
     }
@@ -142,7 +144,7 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
 
  */
             HashMap<String, Object> hashMap = new HashMap<String, Object>();
-            hashMap.put(SellingApiConstants.KEY_PHONE, "2397776543");
+            hashMap.put(SellingApiConstants.KEY_PHONE, SharedPreferenceUtil.getString(SellingConstants.LOGGED_IN_PHONE, ""));
             hashMap.put(SellingApiConstants.KEY_EMAIL, addressVo.getEmail());
             hashMap.put(SellingApiConstants.KEY_PHONE_CODE, "1");
             hashMap.put(SellingApiConstants.KEY_BANK_BUSINESS, "" + addressVo.getBankBusiness());//bank id

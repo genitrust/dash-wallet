@@ -21,11 +21,11 @@ import java.util.Comparator;
 import java.util.List;
 
 import de.schildbach.wallet.wallofcoins.buyingwizard.utils.NetworkUtil;
+import de.schildbach.wallet.wallofcoins.response.GetReceivingOptionsResp;
 import de.schildbach.wallet.wallofcoins.selling_wizard.SellingBaseActivity;
 import de.schildbach.wallet.wallofcoins.selling_wizard.SellingBaseFragment;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.AddressVo;
-import de.schildbach.wallet.wallofcoins.selling_wizard.models.GetReceivingOptionsResp;
 import de.schildbach.wallet.wallofcoins.selling_wizard.price.PriceFragment;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.SellingConstants;
 import de.schildbach.wallet_test.R;
@@ -36,6 +36,7 @@ import retrofit2.Response;
 /**
  * Created by  on 04-Apr-18.
  */
+
 
 public class CashDepositFragment extends SellingBaseFragment implements View.OnClickListener {
 
@@ -73,6 +74,7 @@ public class CashDepositFragment extends SellingBaseFragment implements View.OnC
     }
 
     private void init() {
+
 
         edtViewHolderName = (EditText) rootView.findViewById(R.id.edtViewHolderName);
         edtViewAcc = (EditText) rootView.findViewById(R.id.edtViewAcc);
@@ -154,7 +156,8 @@ public class CashDepositFragment extends SellingBaseFragment implements View.OnC
             String locale;
             locale = getResources().getConfiguration().locale.getCountry();
             progressBar.setVisibility(View.VISIBLE);
-            SellingAPIClient.createService(interceptor, mContext).getReceivingOptions("").enqueue(new Callback<List<GetReceivingOptionsResp>>() {
+            SellingAPIClient.createService(interceptor, mContext).getReceivingOptions("").enqueue(
+                    new Callback<List<GetReceivingOptionsResp>>() {
 
                 @Override
                 public void onResponse(Call<List<GetReceivingOptionsResp>> call, Response<List<GetReceivingOptionsResp>> response) {
