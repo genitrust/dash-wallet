@@ -22,12 +22,12 @@ import java.util.ArrayList;
 import de.schildbach.wallet.wallofcoins.buyingwizard.utils.NetworkUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.SellingBaseActivity;
 import de.schildbach.wallet.wallofcoins.selling_wizard.SellingBaseFragment;
+import de.schildbach.wallet.wallofcoins.selling_wizard.advanced_options.AdvanceOptionsFragment;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.RetrofitErrorUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.AddressVo;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.MarketsVo;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.SellingConstants;
-import de.schildbach.wallet.wallofcoins.selling_wizard.verify_details.VerifySellingDetailsFragment;
 import de.schildbach.wallet_test.R;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -136,7 +136,7 @@ public class PriceFragment extends SellingBaseFragment implements View.OnClickLi
 
         switch (view.getId()) {
             case R.id.btnContinue:
-                if (chkBoxdynamicPricing.isChecked()) {
+              /*  if (chkBoxdynamicPricing.isChecked()) {
                     if (isValidDetails()) {
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(SellingConstants.ADDRESS_DETAILS_VO, getSellingDetails());
@@ -145,11 +145,28 @@ public class PriceFragment extends SellingBaseFragment implements View.OnClickLi
 
                         ((SellingBaseActivity) mContext).replaceFragment(fragment, true, true);
                     }
+                }*/
+                if (isValid())
+                {
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable(SellingConstants.ADDRESS_DETAILS_VO, getSellingDetails());
+                    AdvanceOptionsFragment fragment = new AdvanceOptionsFragment();
+                    fragment.setArguments(bundle);
+
+                    ((SellingBaseActivity) mContext).replaceFragment(fragment, true, true);
                 }
                 break;
         }
     }
-
+    private boolean isValid()
+    {
+        if (edtViewStaticPrice.getText().toString().trim().isEmpty()) {
+            showToast(getString(R.string.enter_price));
+            edtViewStaticPrice.requestFocus();
+            return false;
+        }
+        return true;
+    }
     private boolean isValidDetails() {
 
         if (chkBoxdynamicPricing.isChecked()) {

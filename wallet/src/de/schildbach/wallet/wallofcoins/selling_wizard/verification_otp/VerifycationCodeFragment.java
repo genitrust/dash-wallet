@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.HashMap;
 
@@ -20,6 +21,7 @@ import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingApiConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.instruction.InstructionFragment;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.VerifyAdResp;
+import de.schildbach.wallet.wallofcoins.selling_wizard.storage.SharedPreferenceUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.FragmentUtils;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.SellingConstants;
 import de.schildbach.wallet_test.R;
@@ -40,6 +42,7 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
     private final String TAG = "VerifycationOtpFragment";
     private String verificationCode = "", phone = "", addressId = "";
     private ProgressBar progressBar;
+    private TextView txtViewMsg;
 
     @Override
     public void onAttach(Context context) {
@@ -65,6 +68,10 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
         btnResendOtp = (Button) rootView.findViewById(R.id.btnResendOtp);
         edtViewCode = (EditText) rootView.findViewById(R.id.edtViewCode);
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
+        txtViewMsg = (TextView) rootView.findViewById(R.id.txtViewMsg);
+
+        txtViewMsg.setText(getString(R.string.verification_code_msg, SharedPreferenceUtil.getString(SellingConstants.LOGGED_IN_PHONE, "")));
+
     }
 
     private void setListeners() {

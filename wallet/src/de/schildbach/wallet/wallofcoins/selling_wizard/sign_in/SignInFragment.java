@@ -3,7 +3,6 @@ package de.schildbach.wallet.wallofcoins.selling_wizard.sign_in;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
@@ -43,7 +42,6 @@ import de.schildbach.wallet.wallofcoins.response.CreateDeviceResp;
 import de.schildbach.wallet.wallofcoins.response.CreateHoldResp;
 import de.schildbach.wallet.wallofcoins.response.GetAuthTokenResp;
 import de.schildbach.wallet.wallofcoins.response.GetHoldsResp;
-import de.schildbach.wallet.wallofcoins.selling_wizard.utils.BuyDashPhoneListPref;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.FragmentUtils;
 import de.schildbach.wallet_test.R;
 import retrofit2.Call;
@@ -67,7 +65,6 @@ public class SignInFragment extends BuyDashBaseFragment implements View.OnClickL
     private TextView tv_skip_email;
     private CreateDeviceResp createDeviceResp;
     private CreateHoldResp createHoldResp;
-    private BuyDashPhoneListPref credentilasPref;
     private String fromScreen = "";
 
     @Override
@@ -91,7 +88,6 @@ public class SignInFragment extends BuyDashBaseFragment implements View.OnClickL
     }
 
     private void init() {
-        credentilasPref = new BuyDashPhoneListPref(PreferenceManager.getDefaultSharedPreferences(mContext));
 
         linearProgress = (LinearLayout) rootView.findViewById(R.id.linear_progress);
         linear_email = (LinearLayout) rootView.findViewById(R.id.linear_email);
@@ -373,7 +369,7 @@ public class SignInFragment extends BuyDashBaseFragment implements View.OnClickL
                         if (!TextUtils.isEmpty(password) && TextUtils.isEmpty(((BuyDashBaseActivity) mContext).buyDashPref.getDeviceId())) {
                             getDevice();
                         } else {
-                            credentilasPref.addPhone(country_code + edit_buy_dash_phone.getText().toString().trim(), ((BuyDashBaseActivity) mContext).buyDashPref.getDeviceId());
+                           // credentilasPref.addPhone(country_code + edit_buy_dash_phone.getText().toString().trim(), ((BuyDashBaseActivity) mContext).buyDashPref.getDeviceId());
                             if (fromScreen.equalsIgnoreCase("PhoneListFragment"))
                                 ((BuyDashBaseActivity) mContext).popBackAllFragmentsExcept("pivx.org.pivxwallet.wallofcoins.buyingwizard.phone_list.PhoneListFragment");
                             else
@@ -431,7 +427,7 @@ public class SignInFragment extends BuyDashBaseFragment implements View.OnClickL
 
                             //added
                             String phone = country_code + edit_buy_dash_phone.getText().toString().trim();
-                            credentilasPref.addPhone(phone, ((BuyDashBaseActivity) mContext).buyDashPref.getDeviceId());
+                           // credentilasPref.addPhone(phone, ((BuyDashBaseActivity) mContext).buyDashPref.getDeviceId());
                         }
                         if (!TextUtils.isEmpty(response.body().token)) {
                             ((BuyDashBaseActivity) mContext).buyDashPref.setAuthToken(createHoldResp.token);
