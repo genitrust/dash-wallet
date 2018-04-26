@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import de.schildbach.wallet.wallofcoins.buyingwizard.BuyDashBaseFragment;
+import de.schildbach.wallet.wallofcoins.buyingwizard.utils.FragmentUtils;
 import de.schildbach.wallet.wallofcoins.buyingwizard.utils.NetworkUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.SellingBaseActivity;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
@@ -22,7 +23,6 @@ import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingApiConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.instruction.InstructionFragment;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.VerifyAdResp;
 import de.schildbach.wallet.wallofcoins.selling_wizard.storage.SharedPreferenceUtil;
-import de.schildbach.wallet.wallofcoins.selling_wizard.utils.FragmentUtils;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.SellingConstants;
 import de.schildbach.wallet_test.R;
 import retrofit2.Call;
@@ -37,12 +37,12 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
 
 
     private View rootView;
-    private Button btnVerifyAdd, btnResendOtp;
-    private EditText edtViewCode;
+    private Button button_verify_add, button_resend_otp;
+    private EditText edit_code;
     private final String TAG = "VerifycationOtpFragment";
-    private String verificationCode = "", phone = "", addressId = "";
+    private String mVerificationCode = "", mPhone = "", mAddressId = "";
     private ProgressBar progressBar;
-    private TextView txtViewMsg;
+    private TextView text_msg;
 
     @Override
     public void onAttach(Context context) {
@@ -54,7 +54,7 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.layout_selling_verification_code, container, false);
+            rootView = inflater.inflate(R.layout.fragment_selling_verification_code, container, false);
             init();
             setListeners();
             handleArgs();
@@ -64,27 +64,27 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
     }
 
     private void init() {
-        btnVerifyAdd = (Button) rootView.findViewById(R.id.btnVerifyAdd);
-        btnResendOtp = (Button) rootView.findViewById(R.id.btnResendOtp);
-        edtViewCode = (EditText) rootView.findViewById(R.id.edtViewCode);
+        button_verify_add = (Button) rootView.findViewById(R.id.button_verify_add);
+        button_resend_otp = (Button) rootView.findViewById(R.id.button_resend_otp);
+        edit_code = (EditText) rootView.findViewById(R.id.edit_code);
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
-        txtViewMsg = (TextView) rootView.findViewById(R.id.txtViewMsg);
+        text_msg = (TextView) rootView.findViewById(R.id.text_msg);
 
-        txtViewMsg.setText(getString(R.string.verification_code_msg, SharedPreferenceUtil.getString(SellingConstants.LOGGED_IN_PHONE, "")));
-
+        text_msg.setText(getString(R.string.verification_code_msg,
+                SharedPreferenceUtil.getString(SellingConstants.PREF_LOGGED_IN_PHONE, "")));
     }
 
     private void setListeners() {
-        btnResendOtp.setOnClickListener(this);
-        btnVerifyAdd.setOnClickListener(this);
+        button_resend_otp.setOnClickListener(this);
+        button_verify_add.setOnClickListener(this);
     }
 
     private void handleArgs() {
         if (getArguments() != null) {
-            verificationCode = getArguments().getString(SellingConstants.VERIFICATION_CODE);
-            phone = getArguments().getString(SellingConstants.PHONE_NUMBER);
-            addressId = getArguments().getString(SellingConstants.ADDRESS_ID);
-            edtViewCode.setText(verificationCode);
+            mVerificationCode = getArguments().getString(SellingConstants.ARGUMENT_VERIFICATION_CODE);
+            mPhone = getArguments().getString(SellingConstants.ARGUMENT_PHONE_NUMBER);
+            mAddressId = getArguments().getString(SellingConstants.ARGUMENT_ADDRESS_ID);
+            edit_code.setText(mVerificationCode);
         }
     }
 
@@ -92,11 +92,11 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
     public void onClick(View view) {
 
         switch (view.getId()) {
-            case R.id.btnResendOtp:
+            case R.id.button_resend_otp:
                 showToast("Under Implementation");
                 // verifyOTP();
                 break;
-            case R.id.btnVerifyAdd:
+            case R.id.button_verify_add:
                 navigateToLocation();
                 //verifyAd();
                 break;
@@ -110,9 +110,9 @@ public class VerifycationCodeFragment extends BuyDashBaseFragment implements Vie
 
             HashMap<String, String> verifyAdReq = new HashMap<String, String>();
 
-            verifyAdReq.put(SellingApiConstants.AD_ID, addressId);
-            verifyAdReq.put(SellingApiConstants.KEY_CODE, verificationCode);
-            verifyAdReq.put(SellingApiConstants.KEY_PHONE, phone);
+            verifyAdReq.put(SellingApiConstants.AD_ID, mAddressId);
+            verifyAdReq.put(SellingApiConstants.KEY_CODE, mVerificationCode);
+            verifyAdReq.put(SellingApiConstants.KEY_PHONE, mPhone);
 
             SellingAPIClient.createService(interceptor, mContext).verifyAd(verifyAdReq).enqueue(new Callback<VerifyAdResp>() {
                 @Override

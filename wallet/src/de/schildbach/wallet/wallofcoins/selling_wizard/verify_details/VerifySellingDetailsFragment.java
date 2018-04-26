@@ -20,7 +20,6 @@ import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingAPIClient;
 import de.schildbach.wallet.wallofcoins.selling_wizard.api.SellingApiConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.AddressVo;
 import de.schildbach.wallet.wallofcoins.selling_wizard.models.SendVerificationRespVo;
-import de.schildbach.wallet.wallofcoins.selling_wizard.storage.SharedPreferenceUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.SellingConstants;
 import de.schildbach.wallet.wallofcoins.selling_wizard.utils.WOCLogUtil;
 import de.schildbach.wallet.wallofcoins.selling_wizard.verification_otp.VerifycationCodeFragment;
@@ -35,11 +34,11 @@ import retrofit2.Response;
 
 public class VerifySellingDetailsFragment extends SellingBaseFragment implements View.OnClickListener {
     private View rootView;
-    private Button btnContinue;
+    private Button button_continue;
     private ProgressBar progressBar;
-    private EditText edtViewAcc, edtViewPrice, edtViewEmail, edtViewPhone;
+    private EditText edit_account, edit_price, edit_email, edit_phone;
     private AddressVo addressVo;
-    private String addressId, phone;
+    private String mAddressId, mPhone;
 
     @Override
     public void onAttach(Context context) {
@@ -51,7 +50,7 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.layout_selling_verify_details, container, false);
+            rootView = inflater.inflate(R.layout.fragment_selling_verify_details, container, false);
             init();
             setListeners();
             setTopbar();
@@ -62,16 +61,16 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
     }
 
     private void init() {
-        btnContinue = (Button) rootView.findViewById(R.id.btnContinue);
+        button_continue = (Button) rootView.findViewById(R.id.button_continue);
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
-        edtViewAcc = (EditText) rootView.findViewById(R.id.edtViewAcc);
-        edtViewPrice = (EditText) rootView.findViewById(R.id.edtViewPrice);
-        edtViewEmail = (EditText) rootView.findViewById(R.id.edtViewEmail);
-        edtViewPhone = (EditText) rootView.findViewById(R.id.edtViewPhone);
+        edit_account = (EditText) rootView.findViewById(R.id.edit_account);
+        edit_price = (EditText) rootView.findViewById(R.id.edit_price);
+        edit_email = (EditText) rootView.findViewById(R.id.edit_email);
+        edit_phone = (EditText) rootView.findViewById(R.id.edit_phone);
     }
 
     private void setListeners() {
-        btnContinue.setOnClickListener(this);
+        button_continue.setOnClickListener(this);
     }
 
     private void setTopbar() {
@@ -84,12 +83,12 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
 
         if (getArguments() != null) {
             addressVo = (AddressVo)
-                    getArguments().getSerializable(SellingConstants.ADDRESS_DETAILS_VO);
-            phone = addressVo.getNumber();
-            edtViewAcc.setText(addressVo.getNumber());
-            edtViewPrice.setText(addressVo.getCurrentPrice());
-            edtViewEmail.setText(addressVo.getEmail());
-            edtViewPhone.setText(addressVo.getPhone());
+                    getArguments().getSerializable(SellingConstants.ARGUMENT_ADDRESS_DETAILS_VO);
+            mPhone = addressVo.getNumber();
+            edit_account.setText(addressVo.getNumber());
+            edit_price.setText(addressVo.getCurrentPrice());
+            edit_email.setText(addressVo.getEmail());
+            edit_phone.setText(addressVo.getPhone());
             addressVo.setUserEnabled(true);
         }
     }
@@ -104,9 +103,9 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
     public void onClick(View view) {
 
         switch (view.getId()) {
-            case R.id.btnContinue:
-                navigateToCodeScreen("52015");
+            case R.id.button_continue:
                 // createAddress();
+                navigateToCodeScreen("52015");
                 break;
         }
     }
@@ -144,7 +143,7 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
 
  */
             HashMap<String, Object> hashMap = new HashMap<String, Object>();
-            hashMap.put(SellingApiConstants.KEY_PHONE, SharedPreferenceUtil.getString(SellingConstants.LOGGED_IN_PHONE, ""));
+            hashMap.put(SellingApiConstants.KEY_PHONE, "2397776543");
             hashMap.put(SellingApiConstants.KEY_EMAIL, addressVo.getEmail());
             hashMap.put(SellingApiConstants.KEY_PHONE_CODE, "1");
             hashMap.put(SellingApiConstants.KEY_BANK_BUSINESS, "" + addressVo.getBankBusiness());//bank id
@@ -179,7 +178,7 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
 
                             if (response.code() == 200) {
                                 AddressVo addressVo = response.body();
-                                addressId = addressVo.getId();
+                                mAddressId = addressVo.getId();
                                 WOCLogUtil.showLogError("Address Id:", addressVo.getId());
                                 sendVerificationCode(addressVo.getPhone(), addressVo.getId());
                             } else {
@@ -239,9 +238,9 @@ public class VerifySellingDetailsFragment extends SellingBaseFragment implements
 
     private void navigateToCodeScreen(String code) {
         Bundle bundle = new Bundle();
-        bundle.putSerializable(SellingConstants.VERIFICATION_CODE, code);
-        bundle.putSerializable(SellingConstants.PHONE_NUMBER, phone);
-        bundle.putSerializable(SellingConstants.ADDRESS_ID, addressId);
+        bundle.putSerializable(SellingConstants.ARGUMENT_VERIFICATION_CODE, code);
+        bundle.putSerializable(SellingConstants.ARGUMENT_PHONE_NUMBER, mPhone);
+        bundle.putSerializable(SellingConstants.ARGUMENT_ADDRESS_ID, mAddressId);
         VerifycationCodeFragment fragment = new VerifycationCodeFragment();
         fragment.setArguments(bundle);
 

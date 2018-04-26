@@ -10,9 +10,8 @@ public class SellingApiConstants {
     public final static String CREATE_AUTH = "api/v1/auth/";
     public final static String GET_AUTH = "api/v1/auth/";
     public final static String MARKETS = "api/v1/markets/";
-    public final static String CREATE_ADDRESS = "api/v1/adcreate/";
+    public final static String CREATE_ADDRESS = "api/adcreate/";
     public final static String SEND_VERIFICATION = "api/v1/sendVerification/";
-
 
     public static final String WALLOFCOINS_PUBLISHER_ID = "46";
     public static final String KEY_HEADER_AUTH_TOKEN = "X-Coins-Api-Token";
