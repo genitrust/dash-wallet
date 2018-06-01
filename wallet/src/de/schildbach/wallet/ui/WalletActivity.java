@@ -1012,9 +1012,9 @@ public final class WalletActivity extends AbstractBindServiceActivity
             handleDisconnect();
         } else if (id == R.id.nav_report_issue) {
             handleReportIssue();
-        } else if (id == R.id.nav_sell_coin) {
+        } /*else if (id == R.id.nav_sell_coin) {
             startActivity(new Intent(this, SellingWizardBaseActivity.class));
-        }
+        }*/
         viewDrawer.closeDrawer(GravityCompat.START);
         return true;
     }
