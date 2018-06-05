@@ -6,7 +6,7 @@
 
         <variable
             name="data"
-            type="de.schildbach.wallet.wallofcoins.response.GetReceivingOptionsResp" />
+            type="com.genitrust.wallofcoins.dashwallet.wallofcoins.response.GetReceivingOptionsResp" />
     </data>
 
     <LinearLayout

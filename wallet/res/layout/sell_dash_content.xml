@@ -13,7 +13,7 @@
 
         <!--<fragment
             android:id="@+id/sell_dash_fragment"
-            android:name="de.schildbach.wallet.wallofcoins.SellDashFragment"
+            android:name="com.genitrust.wallofcoins.dashwallet.wallofcoins.SellDashFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />-->
 

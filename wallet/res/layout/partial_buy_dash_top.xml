@@ -51,7 +51,7 @@
                 android:layout_marginRight="4dp"
                 android:orientation="vertical">
 
-                <de.schildbach.wallet.ui.ToolbarCurrencyTextView
+                <com.genitrust.wallofcoins.dashwallet.ui.ToolbarCurrencyTextView
                     android:id="@+id/wallet_balance_btc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                     android:textSize="@dimen/app_bar_balance_font_size"
                     android:textStyle="bold|italic" />
 
-                <de.schildbach.wallet.ui.ToolbarCurrencyTextView
+                <com.genitrust.wallofcoins.dashwallet.ui.ToolbarCurrencyTextView
                     android:id="@+id/wallet_balance_local"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

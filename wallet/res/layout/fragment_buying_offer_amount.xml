@@ -34,7 +34,7 @@
             android:showDividers="middle"
             android:visibility="gone">
 
-            <de.schildbach.wallet.ui.CurrencyAmountView
+            <com.genitrust.wallofcoins.dashwallet.ui.CurrencyAmountView
                 android:id="@+id/request_coins_amount_btc"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
 
                     <requestFocus />
                 </EditText>
-            </de.schildbach.wallet.ui.CurrencyAmountView>
+            </com.genitrust.wallofcoins.dashwallet.ui.CurrencyAmountView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <de.schildbach.wallet.ui.CurrencyAmountView
+            <com.genitrust.wallofcoins.dashwallet.ui.CurrencyAmountView
                 android:id="@+id/request_coins_amount_local"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                     android:imeOptions="flagNoExtractUi"
                     android:textSize="@dimen/font_size_large"
                     tools:ignore="TextFields" />
-            </de.schildbach.wallet.ui.CurrencyAmountView>
+            </com.genitrust.wallofcoins.dashwallet.ui.CurrencyAmountView>
         </LinearLayout>
 
         <LinearLayout

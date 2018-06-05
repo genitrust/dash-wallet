@@ -7,13 +7,13 @@
 
         <variable
             name="item"
-            type="de.schildbach.wallet.wallofcoins.response.GetOffersResp.SingleDepositBean" />
+            type="com.genitrust.wallofcoins.dashwallet.wallofcoins.response.GetOffersResp.SingleDepositBean" />
 
         <import type="android.text.Html" />
 
         <import type="android.view.View" />
 
-        <import type="de.schildbach.wallet.util.GenericUtils" />
+        <import type="com.genitrust.wallofcoins.dashwallet.util.GenericUtils" />
     </data>
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"

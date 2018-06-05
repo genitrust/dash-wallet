@@ -15,7 +15,7 @@
         android:background="@color/bg_less_bright"
         android:orientation="vertical">
 
-        <de.schildbach.wallet.util.ViewPagerTabs
+        <com.genitrust.wallofcoins.dashwallet.util.ViewPagerTabs
             android:id="@+id/network_monitor_pager_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

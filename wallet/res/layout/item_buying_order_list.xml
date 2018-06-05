@@ -11,7 +11,7 @@
 
         <variable
             name="item"
-            type="de.schildbach.wallet.wallofcoins.response.OrderListResp" />
+            type="com.genitrust.wallofcoins.dashwallet.wallofcoins.response.OrderListResp" />
     </data>
 
     <android.support.v7.widget.CardView

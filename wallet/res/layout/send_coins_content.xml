@@ -1,4 +1,4 @@
-<de.schildbach.wallet.ui.widget.KeyboardResponsiveCoordinatorLayout
+<com.genitrust.wallofcoins.dashwallet.ui.widget.KeyboardResponsiveCoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -26,7 +26,7 @@
 
             <fragment
                 android:id="@+id/send_coins_fragment"
-                android:name="de.schildbach.wallet.ui.send.SendCoinsFragment"
+                android:name="com.genitrust.wallofcoins.dashwallet.ui.send.SendCoinsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/address_book_row" />
@@ -45,4 +45,4 @@
         android:src="@drawable/ic_qrcode"
         app:backgroundTint="@color/strong_blue_new" />
 
-</de.schildbach.wallet.ui.widget.KeyboardResponsiveCoordinatorLayout>
+</com.genitrust.wallofcoins.dashwallet.ui.widget.KeyboardResponsiveCoordinatorLayout>

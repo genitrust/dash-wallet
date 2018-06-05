@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.schildbach.wallet.integration.android;
+package com.genitrust.wallofcoins.dashwallet.integration.android;
 
 import android.app.Activity;
 import android.content.Context;
