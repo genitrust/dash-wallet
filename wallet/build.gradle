@@ -74,6 +74,8 @@ android {
         disable 'MissingTranslation'
     }
     defaultConfig {
+        versionCode 1
+        versionName "1.0.0"
         generatedDensities = ['hdpi', 'xhdpi']
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
